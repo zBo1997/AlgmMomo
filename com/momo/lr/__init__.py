@@ -26,7 +26,7 @@ while err > 0.000000001:
     # 计算误差
     err = 0.0
     for x, y in zip(x_train, y_train):
-        err += (y - h(x)) ** 2  # y 计算后的值 - h(x) 表示假设的Y值 原有的误差的平方可以计算出误差 （平方误差公式）
+        err += (y - h(x)) ** 2  # y 计算后的值 - h(x) 表示假设的Y值 原有的误差的平方可以计算出误差 （平方误差公式）【减少离群数据的误差】
     m = len(x_train)  # 样本 数据总量
     err = float(err / (2 * m))  # 再去乘以 1分支2m
     print("err:%f" % err)
